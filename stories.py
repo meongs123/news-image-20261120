@@ -1,18 +1,18 @@
-# stories.py — ONE editable story-data file for news-image-20261120 v2.
+# stories.py — story data for news-image-20261120 v3 (Sat 04:30 re-check folded in).
 # Sources: ~/workspace/makefun/news-image-20261120-evening-candidates.md
 # (§§A + G, incl. G.2 updates) and ~/workspace/makefun/news-image-20261120-concept/
 # research-v2-verified.md (R1–R21). Every number traces to one of those files,
 # or to the builder's own live verification noted below.
 #
 # LIVE VERIFICATIONS by this builder (Sat 21 Nov ~01:00 WIB, before render):
-#  * Kyiv toll: Reuters (via SRN) + The Times + Fox + h.ua + Devdiscourse agree
-#    8 killed (6 Kyiv + 2 Lviv), 28 injured; 15 injured in Kyiv. The "9 total"
-#    figure is CNN single-outlet — NOT used. Coordinator's earlier "7 Kyiv / 9
-#    overall" instruction is superseded by this multi-source check; the 04:30
-#    re-check must freeze the toll (RESERVED below).
+#  * Kyiv toll (v3, Sat 04:30 re-check): 7 killed, 17 injured in Kyiv (16 in
+#    hospital); at least 9 dead nationwide (7 Kyiv + 2 elsewhere), ~30 injured
+#    (Interior Minister). The v2 "8 killed" figure is SUPERSEDED.
 #  * Hodeidah strike: Reuters (via TBS/SRN) — coalition said it struck Hodeidah
-#    port on Fri 20 Nov to destroy Houthi capabilities; warning 10:39 GMT,
-#    strike announced 13:31 GMT. Added to the Houthis deck.
+#    port on Fri 20 Nov to destroy Houthi capabilities; strike ~16:57 GMT,
+#    ~3h after the evacuation warning (~13:57 GMT). Added to the Houthis deck.
+#    (An earlier live-check note gave warning 10:39 GMT / strike 13:31 GMT —
+#    superseded by §H H2; the deck's "~3h" holds under either pair.)
 #  * ICJ Myanmar ruling (DATE CHECK): ICJ case 178 page confirms the Court was
 #    to deliver judgment Thu 19 Nov 2026, 10:00; outcome (9–6, genocide)
 #    confirmed by UN News, CNN, WSJ, Le Monde. The G.3 #47 PROVISIONAL flag
@@ -45,7 +45,7 @@ MASTHEAD_DECK = (
 # Day-in-numbers strip: (big value, small label). None of the six values is a
 # lead-card HEADLINE number (they appear in decks/briefs only). All verified.
 NUMBERS = [
-    ("8", "killed in Kyiv and Lviv"),
+    ("9", "killed in Kyiv and Lviv"),
     ("24.58m", "GTA VI copies, day-one est."),
     ("100,000", "youth scheme cap, each side"),
     ("\u00a317.0bn", "UK October borrowing"),
@@ -54,22 +54,22 @@ NUMBERS = [
 ]
 
 REGIONS = [
-    ("EUROPE", 10, "#2B5EA7"),
-    ("ASIA", 11, "#B3271E"),
+    ("EUROPE", 11, "#2B5EA7"),
+    ("ASIA", 12, "#B3271E"),
     ("OCEANIA", 2, "#2E7D6B"),
     ("AMERICAS", 4, "#7A4A9E"),
-    ("MIDDLE EAST", 3, "#B7791F"),
+    ("MIDDLE EAST", 4, "#B7791F"),
     ("WORLD", 5, "#555555"),
     ("AFRICA", 2, "#8A5A2B"),
 ]
 
 FIELDS = [
-    ("WAR", 5),
+    ("WAR", 6),
     ("ECONOMY", 11),
     ("DISASTERS", 1),
     ("SPORT", 4),
-    ("JUSTICE", 2),
-    ("POLITICS", 6),
+    ("JUSTICE", 3),
+    ("POLITICS", 7),
     ("SOCIETY", 5),
     ("TECH", 2),
     ("CLIMATE", 1),
@@ -80,13 +80,13 @@ FIELDS = [
 STORIES = [
     dict(id=1, region="Europe", field="War", place="KYIV, UKRAINE",
          headline="Russian missiles hit Kyiv bridges overnight",
-         deck="At least 8 killed \u2014 6 in Kyiv, 2 in Lviv; 3 bridges hit, "
-              "power cut in several districts.",
+         deck="At least 9 killed \u2014 7 in Kyiv, 2 in Lviv; ~30 injured. "
+              "3 bridges hit, power cut in several districts.",
          art="kyiv", src="Reuters"),
     dict(id=2, region="Asia", field="Disasters", place="ODISHA, INDIA",
          headline="Cyclone Akvan comes ashore in eastern India",
-         deck="Crossed near Gopalpur 07:30\u201308:30 IST; 372,000 evacuated, "
-              "423 teams; officials: no major damage yet.",
+         deck="Crossed near Gopalpur 07:30\u201308:30 IST; 372,000 evacuated; "
+              "officials: no deaths or major damage.",
          art="akvan", src="IMD"),
     dict(id=3, region="Asia", field="Economy", place="TOKYO \u00b7 SEOUL \u00b7 TAIPEI",
          headline="AI sell-off sinks Asia's stock markets",
@@ -114,17 +114,17 @@ STORIES = [
               "Air, rail excluded; separate rail strike from 21:00.",
          art="italy", src="ANSA"),
     dict(id=8, region="Middle East", field="War", place="YEMEN \u00b7 SAUDI ARABIA",
-         headline="Coalition strikes Hodeidah after warning",
-         deck="Civilians told to leave, then the coalition hits the port; "
-              "Saree says Jeddah would be hit if it attacks.",
+         headline="Coalition strikes Hodeidah port",
+         deck="Coalition hits port ~3h after warning; minister says it "
+              "still runs. Saree: Jeddah hit if it attacks.",
          art="houthis", src="Reuters"),
     dict(id=9, region="World", field="Society", place="WORLD",
-         headline="GTA VI day-one sales put at $2.36bn \u2014 estimate",
+         headline="GTA VI day-one sales: $2.36bn est.",
          deck="Sensor Tower estimate: ~24.58m copies on launch day; "
               "PS5 ~75%. No official figures yet.",
          art="gta", src="Sensor Tower"),
     dict(id=10, region="World", field="Tech", place="SPACE",
-         headline="Spacecraft set for Mercury orbit on Saturday",
+         headline="Mercury orbit set for Saturday",
          deck="Commands sent Friday for a 19:24 CET burn; 37-minute "
               "firing of four thrusters.",
          art="bepi", src="ESA"),
@@ -148,8 +148,7 @@ STORIES = [
          art=None, src="TWSE"),
     dict(id=15, region="Middle East", field="War", place="IRAQ",
          headline="Iraqi forces in militia stronghold",
-         deck="Expected to withdraw within a month; Kataib forces enter "
-              "Jurf al-Sakhar under a deal.",
+         deck="Kataib quits in a month; Iraqi forces enter.",
          art=None, src="Reuters"),
     dict(id=16, region="Oceania", field="Sport", place="WELLINGTON",
          headline="New Zealand 368 all out; India 159/1",
@@ -160,10 +159,9 @@ STORIES = [
          deck="OFAC 19 Nov US; NZ Police 06:42 NZDT.",
          art=None, src="NZ Police"),
     dict(id=18, region="Americas", field="Economy", place="NEW YORK",
-         headline="US stocks slide again \u2014 intraday",
-         deck="SPY \u22120.6%, QQQ \u22121.2% early; Anthropic down "
-              "~6\u201310% premarket.",
-         art=None, src="StockSetups"),
+         headline="S&P \u22123.6%; 7th straight loss",
+         deck="Nasdaq \u22125.1%; Dow \u22121.9%; ANT \u22128.5%.",
+         art=None, src="Reuters"),
     dict(id=19, region="Asia", field="Society", place="SOUTH KOREA",
          headline="Korea's first cholera in 10 years",
          deck="Changwon patient recovered; KDCA tracing.",
@@ -180,12 +178,11 @@ STORIES = [
          art=None, src="Reuters"),
     dict(id=22, region="World", field="Tech", place="WORLD",
          headline="NGINX: 8.8m potentially exposed",
-         deck="No exploitation reported; fixes shipped. Censys tracker "
-              "(19 Nov, upper bound).",
+         deck="No exploitation; fixes shipped (19 Nov).",
          art=None, src="Censys"),
     dict(id=23, region="World", field="Economy", place="WORLD",
-         headline="Oil falls for third week \u2014 intraday",
-         deck="Brent ~$90.50, down ~5% on the week. Close pending.",
+         headline="Brent $92.57; third weekly fall",
+         deck="Brent $92.57, wk \u22123.4%; WTI $83.98.",
          art=None, src="Reuters"),
     dict(id=24, region="Europe", field="Society", place="BARCELONA",
          headline="Pancreatic combo shows promise",
@@ -216,7 +213,7 @@ STORIES = [
          art=None, src="ONS"),
     dict(id=30, region="Europe", field="Sport", place="LONDON",
          headline="Leon Smith quits Davis Cup captaincy",
-         deck="Final 8 in Bologna ends his 17 years.",
+         deck="Final 8 in Bologna ends almost 17 years.",
          art=None, src="Reuters"),
     dict(id=31, region="Europe", field="Sport", place="ZURICH \u00b7 NYON",
          headline="Ireland draw Czechia in World Cup",
@@ -227,9 +224,9 @@ STORIES = [
          deck="Semis Sat after QF wins Friday.",
          art=None, src="The Bridge"),
     dict(id=33, region="Americas", field="Politics", place="WASHINGTON",
-         headline="Trump holds White House presser after Asia trip",
-         deck="$17bn+ in deals claimed; Thailand trade deal, "
-              "Philippines pledge.",
+         headline="Trump claims $17bn+ in Asia deals",
+         deck="Thailand deal \u2018substantially concluded\u2019; $12bn Boeing "
+              "order. No Iran timetable, no Ukraine ceasefire.",
          art="presser", src="White House"),
     dict(id=34, region="Americas", field="Justice", place="IOWA, US",
          headline="Iowa blast postponed after court stay",
@@ -248,6 +245,18 @@ STORIES = [
          headline="Pakistan minister in Delhi for SCO",
          deck="First visit since May 2023.",
          art=None, src="ANI"),
+    dict(id=38, region="Middle East", field="War", place="STRAIT OF HORMUZ",
+         headline="Tanker struck, catches fire off Oman",
+         deck="Struck ~15:00 UTC; no casualties.",
+         art=None, src="Reuters"),
+    dict(id=39, region="Asia", field="Justice", place="NAYPYITAW, MYANMAR",
+         headline="Myanmar rejects ICJ genocide ruling",
+         deck="\u2018Unfair\u2019 \u2014 ops were counterterrorism.",
+         art=None, src="Reuters"),
+    dict(id=40, region="Europe", field="Politics", place="TALLINN, ESTONIA",
+         headline="Estonia to shut Russia border",
+         deck="From 1 Dec, \u22656 months; Russia replies.",
+         art=None, src="Reuters"),
 ]
 
 LEAD_IDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 33]
@@ -268,7 +277,7 @@ DATE_CHECK = (
 
 FOOTER = (
     "Every story is a 20 November development or first report; earlier hooks are "
-    "dated in the deck. Contested claims are attributed; intraday figures labelled. "
+    "dated in the deck. Contested claims are attributed. "
     "Sources: Reuters, AP, IMD, TWSE, NZ Police, KDCA, Censys, ANSA, Al Jazeera, "
     "ONS, ESA, White House."
 )
@@ -284,30 +293,41 @@ FOOTER = (
 # >=15px apart so no two pin discs overlap. Audit: /tmp/fix2_pins.py
 # (point-in-polygon vs LAND_POLYS + pixel-ring >=120 land px per pin).
 MAP_PINS = [
-    (1, 0.575, 0.235), (2, 0.75, 0.42), (3, 0.86, 0.32),
+    (1, 0.575, 0.235), (2, 0.75, 0.42), (3, 0.83, 0.35),
     (4, 0.51, 0.235), (5, 0.45, 0.24), (6, 0.62, 0.35),
     (7, 0.46, 0.325), (8, 0.64, 0.43), (9, 0.17, 0.35),
-    (10, 0.52, 0.325), (11, 0.53, 0.52), (12, 0.86, 0.30),
+    (10, 0.52, 0.325), (11, 0.53, 0.52), (12, 0.88, 0.27),
     (33, 0.22, 0.26),
 ]
 
 # ---------------------------------------------------------------------------
-# RESERVED — 04:30 WIB Sat re-check (do NOT fill before it lands; edit this
-# file only, then re-render). Items that slot in as a final revision before
-# the 08:00 freeze:
-#   * A1 Kyiv toll freeze: live multi-source figure at build time is 8 killed
-#     (6 Kyiv + 2 Lviv), 28 injured. If the re-check moves it (e.g. CNN's 9
-#     gains a second source), update story 1 deck + NUMBERS slot 1.
-#   * COP31 final text (story 6): deadlock/overtime now; if a final text is
-#     adopted, replace the deck with the adopted outcome (fossil-fuel
-#     language in/out, adaptation-finance figure) — never claim an outcome
-#     that has not happened.
-#   * Trump presser follow-up (story 33): any overnight follow-up.
-#   * US Fri close (story 18): replace intraday SPY/QQQ + Anthropic
-#     premarket figures with the final close; drop "intraday" from the
-#     headline when the close is in.
-#   * Oil Fri close (story 23): replace intraday Brent ~$90.50 with the
-#     final settle + confirmed weekly fall; drop "intraday" when in.
-#   * R18 MARAD memo: DROPPED from this image (single primary source).
-#     Revisit only if a second independent source confirms it.
+# FOLDED IN v3 — Sat 04:30 WIB re-check (candidates file §H). All items below
+# are applied in the data above; nothing here is still pending.
+#   * Kyiv toll (story 1 + NUMBERS slot 1): 9 killed, ~30 injured — see note above.
+#   * US Fri close (story 18): S&P 6,918.45 −3.59%, Nasdaq 22,654.15 −5.13%,
+#     Dow 48,188.18 −1.85%; 7th straight S&P loss, longest since Feb 2020;
+#     ANT $88.91, −8.5% vs Thu $97.17, still +7.1% above the $83 IPO price.
+#     (Reuters preliminary data; StockSentimentApp; Finnhub.)
+#   * Oil Fri close (story 23): Brent $92.57, +$0.59 (+0.64%), weekly −3.4%
+#     vs last Fri $95.84; WTI Dec $83.98, +$0.77 (+0.93%), weekly −5.2%.
+#     Third straight weekly decline CONFIRMED. WTI conflict resolved at build
+#     time: Reuters via Euronext AND WSJ agree exactly on $83.98; the
+#     SquawkNews $86.01 headline is the outlier and is NOT used.
+#   * COP31 (story 6): NO CHANGE — final text NOT adopted by the 21:30 UTC
+#     cutoff; talks in overtime in Antalya; next draft not expected until
+#     Sat morning. Deck stays "deadlock / overtime / no deal yet".
+#   * Trump presser (story 33): noon ET, Brady Briefing Room, Vance + Rubio
+#     flanking; Thailand "substantially concluded", Philippines $12bn Boeing
+#     deal, $17bn+ claimed; no Iran timetable, no Ukraine ceasefire.
+#   * Hodeidah (story 8): coalition struck port ops ~16:57 GMT, ~3h after the
+#     warning; strikes also in Sanaa, Saada, Taiz; minister says the port
+#     remains fully operational. Saree threats stay conditional.
+#   * Akvan (story 2): no deaths / no major damage confirmed by Odisha officials.
+#   * Italy (story 7): no new figures; rail strike only ~1.5h in at re-check.
+#   * NEW briefs 38–40 (option-a trial: 13 leads + 27 briefs): H3 Hormuz tanker
+#     struck ~15:00 UTC, 8 NM off Khasab, fire onboard, no casualties, mine
+#     claim attributed only; H4 Myanmar rejects the ICJ ruling as "unfair";
+#     H5 Estonia formally decides to shut Russia road crossings from 1 Dec.
+#   * R18 MARAD memo: still DROPPED (single primary source). No DATE CHECK
+#     item was promoted to a story. No number invented anywhere.
 # ---------------------------------------------------------------------------
